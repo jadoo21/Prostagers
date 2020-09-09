@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+
+  
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="style.css">
+    <style>
+        body
+{
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+
+
+
+
+section
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+.bannerText
+{
+	position: absolute;
+	top: 50%;
+	left: 15%;
+	transform: translateY(-50%);
+	max-width: 700px;
+}
+.bannerText h2,
+.bannerText h3
+{
+	position: relative;
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	transform-origin: left;
+	text-transform: uppercase;
+	transform: scaleX(0);
+	animation: revealTextReverse 1s ease-in-out forwards;
+}
+.bannerText h2
+{
+	font-size: 5.5em;
+	animation-delay: 2s;
+}
+.bannerText h3
+{
+	font-size: 3em;
+	animation-delay: 3s;
+}
+.bannerText h2:before,
+.bannerText h3:before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	background:#384440;
+	width: 100%;
+	height: 100%;
+	transform-origin: right;
+	animation: revealText 1s ease-in-out forwards;
+	animation-delay: 3s;
+}
+.bannerText h3:before
+{
+	animation-delay: 4s;
+}
+@keyframes revealText
+{
+	0%
+	{
+		transform: scaleX(1);
+	}
+	100%
+	{
+		transform: scaleX(0);
+	}
+}
+@keyframes revealTextReverse
+{
+	0%
+	{
+		transform: scaleX(0);
+	}
+	100%
+	{
+		transform: scaleX(1);
+	}
+}
+.bannerText p
+{
+	opacity: 0;
+	font-weight: 400;
+	font-size: 1.2em;
+	animation: fadeIn 1s linear forwards;
+	animation-delay: 5s;
+}
+@keyframes fadeIn
+{
+	0%
+	{
+		opacity: 0;
+	}
+	100%
+	{
+		opacity: 1;
+	}
+}
+.bannerText a
+{
+	opacity: 0;
+	display: inline-block;
+	margin: 20px 0 0;
+	padding: 10px 20px;
+	background: #000;
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+	font-size: 1.2em;
+	letter-spacing: 1px;
+	animation: fadeInBottom 0.5s linear forwards;
+	animation-delay: 5.5s;
+}
+@keyframes fadeInBottom
+{
+	0%
+	{
+		transform: translateY(50px);
+		opacity: 0;
+	}
+	100%
+	{
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+.bulb
+{
+	opacity: 0;
+	position: absolute;
+	right: 10%;
+	top: 26%;
+	transform: translateY(-50%);
+	animation: fadeIn 1s linear forwards;
+	animation-delay: 6s;
+	z-index: 100;
+    width:20%;
+    height:24%;
+
+}
+.sci
+{
+	position: absolute;
+	bottom: 15px;
+	right: 30px;
+	display: flex;
+	flex-direction: column;
+}
+.sci li
+{
+	opacity: 0;
+	list-style: none;
+	padding: 10px 0;
+	text-align: center;
+	animation: fadeInBottom 0.5s linear forwards;
+}
+.header ul li:nth-child(1),
+.sci li:nth-child(1)
+{
+	animation-delay: 5s;
+}
+.header ul li:nth-child(2),
+.sci li:nth-child(2)
+{
+	animation-delay: 5.25s;
+}
+.header ul li:nth-child(3),
+.sci li:nth-child(3)
+{
+	animation-delay: 5.5s;
+}
+.header ul li:nth-child(4),
+.sci li:nth-child(4)
+{
+	animation-delay: 5.75s;
+}
+.header ul li:nth-child(5),
+.sci li:nth-child(5)
+{
+	animation-delay: 6s;
+}
+.header ul li:nth-child(6),
+.sci li:nth-child(6)
+{
+	animation-delay: 6.25s;
+}
+.sci li a
+{
+	font-size: 1.2em;
+	color: #000;
+}
+.header
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 65px;
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: 10px 0;
+	top:0%;
+	background-color: rgba(60, 60, 60, 0.5);
+	z-index:1;
+}
+
+.header ul
+{
+	margin: 0;
+	padding: 0;
+	z-index: 100;
+	display: flex;
+}
+.header ul li
+{
+	opacity: 0;
+	list-style: none;
+	margin: 0px 10px;
+	animation: fadeInRight 0.5s linear forwards;
+}
+.header ul li:last-child
+{
+	margin-right: 0;
+}
+.header ul li a
+{
+	padding:  17px;
+font-size:14px;
+text-align:center;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+position:relative;
+color:white;
+outline:none;
+background-color:transparent;
+
+border-radius:8px;
+display:incline;
+transition-duration:0.3s;
+left:800px;
+ text-decoration: none;
+    }
+.header ul li a.active,
+.header ul li a:hover
+{
+	background: #000;
+	color: #fff;
+}
+@keyframes fadeInRight
+{
+	0%
+	{
+		transform: translateX(150px);
+		opacity: 0;
+	}
+	100%
+	{
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+#clock {
+  font-size: 4em;
+  color:#384440;
+  margin-left:800px;
+  margin-top:6%;
+}
+
+
+
+    </style>
+</head>
+<body>
+<div class="open">
+			<div class="layer"></div>
+			<div class="layer"></div>
+		</div>
+
+
+		<section style="background:url('a7.jpeg');background-repeat:no-repeat; width:100%;background-size:cover; background-attachment:fixed;">
+			<div class="header">
+				<div class="header-right">
+					<ul >
+					<li >
+						<a href="#" onclick="document.location='index.html'" style="padding:10px 18px;">Home</a>
+					</li>
+					<li>
+						<a href="#" onclick="document.location='about.html'" style="padding:10px 20px;">About</a>
+					</li>
+					<li>
+						<a href="#" onclick="document.location='project.html'" style="padding:10px 20px;" >Project</a>
+					</li>
+					<li>
+						<a href="#" onclick="document.location='team.html'" style="padding:10px 20px;" >Team</a>
+					</li>
+					<li>
+						<a href="#" onclick="document.location='contact.html'" style="padding:10px 20px;">Contact</a>
+					</li>
+				    </ul>
+				</div>
+			</div>
+
+			<div class="bannerText">
+				<h2 style="margin-top:75px; color:crimson;">Think Creative</h2><br>
+				<h3 style="transition:4s; color:tomato;">And Make Innovative Solutions</h3>
+				<p style="font-family:Comic Sans MS, cursive, sans-serif; font-size:18px; font-weight:bold; color:#3C403F">We are here to develop our projects under the name Prostagers. Our goal is to develop prototypes of the solution that will really help people with the problems they
+face in their daily life. It may include Climate change, health care or automation.
+we have been a part of various national Hackathon including Smart India Hackathon, hackoverflow 3.0, Dishathon, NASA space app challenge etc. We want to share the
+knowledge and experience with you and want to help you in making your projects with much ease.</p>
+
+			</div>
+						<img src="xx logo.png" class="bulb">
+						
+		
+<div id="clock"></div>
+			<script >
+				var clockElm = document.querySelector('#clock');
+
+				setInterval(()=>{
+  clockElm.textContent = time();
+  let currentColor = getRandomColor();
+  document.body.style.background = "#" + currentColor;
+  document.body.style.color = invertColor(currentColor);
+},1000);
+
+function time() {
+  var d = new Date();
+  var s = d.getSeconds();
+  var m = d.getMinutes();
+  var h = d.getHours();
+  return h + ":" + m + ":" + s;
+}
+
+
+function invertColor(hex) {
+    if (hex.indexOf('#') === 0) {
+        hex = hex.slice(1);
+    }
+    // convert 3-digit hex to 6-digits.
+    if (hex.length === 3) {
+        hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+    }
+    if (hex.length !== 6) {
+        throw new Error('Invalid HEX color.');
+    }
+    // invert color components
+    var r = (255 - parseInt(hex.slice(0, 2), 16)).toString(16),
+        g = (255 - parseInt(hex.slice(2, 4), 16)).toString(16),
+        b = (255 - parseInt(hex.slice(4, 6), 16)).toString(16);
+    // pad each with zeros and return
+    return '#' + padZero(r) + padZero(g) + padZero(b);
+}
+
+function padZero(str, len) {
+    len = len || 2;
+    var zeros = new Array(len).join('0');
+    return (zeros + str).slice(-len);
+}
+			</script>
+
+
+
+
+			<ul class="sci">
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+				<li><a href="https://www.instagram.com/official_shams03/" target="blank"><i class="fa fa-instagram"></i></a></li>
+			</ul>
+
+
+
+		</section>
+	
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,780 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript">
+  function openTab(th)
+  {
+      window.open(th.name,'_blank');
+  }
+</script>
+<style>
+
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family:Droid Serif, serif;
+padding:20 px 10px;
+}
+
+.header {
+ overflow: hidden;
+background: rgba(0, 0, 0, 0.5);
+ margin-left:0px;
+z-index:1;
+padding:10px;
+ 
+  position: fixed;
+}
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 25px; 
+  border:1px;
+}
+.header a.logo {
+position:relative;
+left:100px;
+ 
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header-right {
+  float: right;
+  right:60px;
+}
+
+.button
+{
+padding:17px;
+font-size:16px;
+text-align:center;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+position:relative;
+outline:none;
+color:white;
+background-color:transparent;
+border:none;
+
+border-radius:8px;
+display:incline;
+transition-duration:0.3s;
+font-size:16px;
+ text-decoration: none;
+}
+.button:hover {
+ background-color:#35C0ED;
+ color: white;
+}
+
+
+.button1 {
+  border-radius: 12px;
+  background-color:77848B;
+background: url("3.gif") no-repeat scroll 0 0 transparent;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 0%;
+  margin-left:43%;
+font-weight:bold;
+}
+
+.button1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button1:hover span {
+  padding-right: 25px;
+}
+
+.button1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.button2 {
+  
+  background-color:77848B;
+ border-radius:8px;
+ border: 2px solid palevioletred;
+  color:#0C98A6;
+
+  font-size: 18px;
+  padding: 0 auto;
+  width: 140px;
+  height:40px;
+margin-left:960px;
+font-weight:bold;
+text-align: center;
+background:transparent;
+font-family:'Courier New', Courier, monospace;
+
+vertical-align: center;  
+   
+}
+
+.button3 {
+  
+  background-color:77848B;
+ border-radius:8px;
+ border: 2px solid palevioletred;
+  color:#0C98A6;
+
+  font-size: 18px;
+  padding: 0 auto;
+  width: 140px;
+  height:40px;
+margin-left:960px;
+font-weight:bold;
+text-align: center;
+background:transparent;
+font-family:'Courier New', Courier, monospace;
+margin-top:20px;
+vertical-align: center;  
+   
+}
+
+.button4 {
+  
+background-color:77848B;
+border-radius:8px;
+border: 2px solid palevioletred;
+color:#0C98A6;
+font-size: 18px;
+padding: 0 auto;
+width: 140px;
+height:40px;
+margin-left:960px;
+font-weight:bold;
+text-align: center;
+background:transparent;
+font-family:'Courier New', Courier, monospace;
+margin-top:40px;
+vertical-align: center;  
+   
+}
+
+
+
+.back
+{
+background-image: url("ABOUT US.jpg"); 
+width:100%;
+height:48%;
+background-repeat:no-repeat;
+background-position: center;
+background-size: cover;
+margin-top: 0px;
+left: 0px;
+overflow:hidden;
+}
+
+.text
+{
+font-family:Comic Sans MS, cursive, sans-serif;
+font-weight:normal;
+font-size:40px;
+color:black;
+text-align:center;
+margin-left:20px;
+margin-top:15px;
+}
+.text1
+{
+font-family:Comic Sans MS, cursive, sans-serif;
+font-weight:normal;
+font-size:18px;
+color:black;
+text-align:center;
+margin-left:220px;
+margin-top:10px;
+margin-right:150px;
+
+}
+
+.shams
+{
+border-radius:10%;
+
+border:1px solid gray;
+margin-top:100px;
+margin-left:150px;
+}
+.he
+{
+font-size:22px;
+font-family:Comic Sans MS, cursive, sans-serif;
+font-weight:bold;
+color:black;
+text-align:center;
+margin-left:220px;
+margin-top:-10px;
+margin-right:150px;
+}
+.container{
+    width: 90%;
+    height: 380px;
+    border:1px solid gray;
+    border-radius:12px;
+    color: #fff;
+    top: 190%;
+    left:5%;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 5px 2px 5px 2px;
+    margin:10px;
+    background:rgba(255,0,0,0.1);
+    background-image:url("1 (1).jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.head
+{
+font-size:22px;
+font-family:	Comic Sans MS, cursive, sans-serif;
+font-weight:bold;
+color:black;
+text-align:center;
+margin-left:220px;
+margin-top:-230px;
+margin-right:150px;
+}
+.team
+{
+font-size:16px;
+font-family:Comic Sans MS, cursive, sans-serif;
+font-weight:normal;
+color:black;
+margin-left:530px;
+margin-top:15px;
+margin-right:150px;
+list-style-type: square;
+}
+.head1
+{
+font-size:18px;
+font-family:Comic Sans MS, cursive, sans-serif;
+font-weight:bold;
+color:black;
+text-align:center;
+margin-left:220px;
+margin-top:-2px;
+margin-right:150px;
+}
+.team1
+{
+font-size:16px;
+font-family:Comic Sans MS, cursive, sans-serif;
+font-weight:normal;
+color:black;
+margin-left:530px;
+margin-top:15px;
+margin-right:150px;
+list-style-type: square;
+}
+.container1{
+    width: 90%;
+    height: 380px;
+    border:1px solid gray;
+    border-radius:12px;
+    color: #fff;
+    top: 260%;
+    left:5%;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 5px 2px 5px 2px;
+    margin:10px;
+    background:rgba(255,0,0,0.1);
+    background-image:url("1 (1).jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.head2
+{
+font-size:22px;
+font-family:	Comic Sans MS, cursive, sans-serif;
+font-weight:bold;
+color:black;
+text-align:center;
+margin-left:220px;
+margin-top:-230px;
+margin-right:150px;
+}
+.team2
+{
+font-size:16px;
+font-family:Comic Sans MS, cursive, sans-serif;
+font-weight:normal;
+color:black;
+margin-left:530px;
+margin-top:15px;
+margin-right:150px;
+list-style-type: square;
+}
+.head3
+{
+font-size:18px;
+font-family:Comic Sans MS, cursive, sans-serif;
+font-weight:bold;
+color:black;
+text-align:center;
+margin-left:220px;
+margin-top:-2px;
+margin-right:150px;
+}
+.team3
+{
+font-size:16px;
+font-family:Comic Sans MS, cursive, sans-serif;
+font-weight:normal;
+color:black;
+margin-left:530px;
+margin-top:15px;
+margin-right:150px;
+list-style-type: square;
+}
+.container2{
+    width: 90%;
+    height: 380px;
+    border:1px solid gray;
+    border-radius:12px;
+    color: #fff;
+    top: 330%;
+    left:5%;
+    position: absolute;
+    box-sizing: border-box;
+    padding: 5px 2px 5px 2px;
+    margin:10px;
+    background:rgba(255,0,0,0.1);
+    background-image:url("1 (1).jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+.head4
+{
+font-size:22px;
+font-family:	Comic Sans MS, cursive, sans-serif;
+font-weight:bold;
+color:black;
+text-align:center;
+margin-left:220px;
+margin-top:-230px;
+margin-right:150px;
+}
+.team4
+{
+font-size:16px;
+font-family:Comic Sans MS, cursive, sans-serif;
+font-weight:normal;
+color:black;
+margin-left:530px;
+margin-top:15px;
+margin-right:150px;
+list-style-type: square;
+}
+.head5
+{
+font-size:18px;
+font-family:Comic Sans MS, cursive, sans-serif;
+font-weight:bold;
+color:black;
+text-align:center;
+margin-left:220px;
+margin-top:-2px;
+margin-right:150px;
+}
+.team5
+{
+font-size:16px;
+font-family:Comic Sans MS, cursive, sans-serif;
+font-weight:normal;
+color:black;
+margin-left:530px;
+margin-top:15px;
+margin-right:150px;
+list-style-type: square;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+* {
+  font-family: Open Sans;
+}
+
+
+.footer-distributed{
+	background: #666;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+        margin-top:1500px;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  lightseagreen;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="back">
+
+<div class="header">
+<img src="xx logo.png" style="position:relative;  margin-left:40px;" width="8%" height="15%"  />
+<div class="header-right">
+<button class="button" class="button" onclick="document.location='index.html'" style="padding:8px 20px; font-size:14px;" >Home</button>
+<button class="button"  onclick="document.location='about.html'" style="padding:10px 20px; font-size:14px;">About</button>
+<button class="button" onclick="document.location='project.html'"style="padding:10px 20px; font-size:14px;">Project</button>
+<button class="button" onclick="document.location='team.html'" style="padding:10px 20px; font-size:14px;">Team</button>
+<button class="button" onclick="document.location='contact.html'" style="padding:10px 20px; font-size:14px;margin-right:50px;">Contact</button>
+</div>
+</div>
+</div>
+<h1 class="text">What makes us different</h1>
+<p class="text1">Here, In Prostagers we believe whatever we think we can create. Our team focuses on the solution based on real life problems. We always come up with the innovative ideas to make people lives more and more easier. Our company's main motto is to make world a better place with some piece of code. We already have created some projects solving drainage cleaning problem, air pollution and working on some more awesome projects.
+Once people became satisfied they stop innovating things, but here we are struggling every day to find problems so that we can discover a solution then to bring that solution to the people.
+Not only this but our team is participating in many Hackathons not only to win the rewards but to explore the problems out there and to work on a solution.
+<br></p>
+<p class="he">"We are unstoppable"</p>
+<br>
+<hr>
+<br>
+<h1 class="text">Our Goals!</h1>
+<p class="text1">We are here to develop our projects under the name Prostagers. Our goal is to develop prototypes of the solution that will really help people with the problems they 
+face in their daily life. It may include Climate change, health care or automation. 
+we have been a part of various national Hackathon including Smart India Hackathon, hackoverflow 3.0, Dishathon, NASA space app challenge etc. We want to share the
+knowledge and experience with you and want to help you in making your projects with much ease.</p>
+
+<div class="container">
+<img src="shams-img.jpeg" class="shams" style="width:180px; height:180px">
+<h1 class="head"> Shams Tabrez </h1>
+<ul class="team">
+<li> Studing at Chandigarh University</li> 
+<li> B.E. CSE  4th year</li> 
+<li> Tech Enthusiast</li> 
+<li> Loves Astrnomy</li> 
+</ul>
+<h1 class="head1"> Achievements - </h1>
+<ul class="team1">
+<li> Won World IoT Hackathon 2019</li> 
+<li>Went to NASSCOM Bengaluru for a bootcamp by Geeksup</li> 
+<li> 1st prize in DA VINCI CODE Hackathon</li> 
+</ul>
+<button class="button2" onClick="openTab(this)"  name="Shams Tabrez RESUME.pdf"   >Read More</button>
+</div>
+
+
+<div class="container1">
+<img src="jaadu-img.jpeg" class="shams" style="width:180px; height:180px">
+<h1 class="head2"> Rishabh Roshan </h1>
+<ul class="team2">
+<li> Studing at Chandigarh University</li> 
+<li> B.E. CSE  4th year</li> 
+<li> Tech Enthusiast</li> 
+<li> Loves coding</li> 
+</ul>
+<h1 class="head3"> Achievements - </h1>
+<ul class="team3">
+<li> Completed NASA space apps challenge 2019</li> 
+<li> 1st prize in DA VINCI CODE Hackathon</li> 
+</ul>
+<button class="button4" onClick="openTab(this)"  name="17BCS3544_RISHABH.pdf"   >Read More</button>
+</div>
+
+
+<div class="container2">
+<img src="leena-img.jpg" class="shams" style="width:180px; height:180px">
+<h1 class="head4"> Leena </h1>
+<ul class="team4">
+<li> Studing at Chandigarh University</li> 
+<li> B.E. CSE  4th year</li> 
+<li> Loves designing</li> 
+</ul>
+<h1 class="head5"> Achievements - </h1>
+<ul class="team5">
+<li>Completed NASA space apps challenge 2019</li> 
+<li> 1st prize in DA VINCI CODE Hackathon</li> 
+</ul>
+<button class="button4" onClick="openTab(this)"  name="17BCS2553.pdf"   >Read More</button>
+</div>
+<button class="button1" onclick="document.location='project.html'" ><span>Check projects</span></button>
+<p style="margin-left:35%; font-family:Comic Sans MS;">click here for more details about our working projects.</p><br><hr>
+<br>
+<br>
+<br><br>
+
+</div>
+
+</div>
+
+
+<footer class="footer-distributed">
+<div class="footer-left">
+
+<img src="xx logo.png" width="20%" height="9%">
+
+<p class="footer-links">
+<a href="index.html" class="link-1">Home</a>
+					
+<a href="project.html">project</a>
+
+				
+<a href="about.html">About</a>
+					
+<a href="contact.html">Contact</a>
+</p>
+
+<p class="footer-company-name">Prostagers © 2020</p>
+</div>
+
+<div class="footer-center">
+
+<div>
+<i class="fa fa-map-marker"></i>
+<p><span>Chandigarh University,Gharaun</p>
+</div>
+
+<div>
+<i class="fa fa-phone"></i>
+<p>+91.7903113421</p>
+</div>
+
+<div>
+<i class="fa fa-envelope"></i>
+<p><a href="mailto: prostagers.help@gmail.com">prostagers.help@gmail.com</a></p>
+</div>
+
+</div>
+<div class="footer-right">
+
+<p class="footer-company-about" >
+<span style="font-size:18px;">About the company</span>
+<h style="font-size:15px;">We are here to develop our projects under the name Prostagers. Our goal is to develop prototypes of the solution that will really help people with the problems they 
+face in their daily life.</h>
+</p>
+<div class="footer-icons">
+
+<a href="https://www.instagram.com/official_shams03/" target="blank"><i class="fa fa-instagram" style="margin-top:7px;"></i></a>
+<a href="#"><i class="fa fa-twitter" style="margin-top:7px;"></i></a>
+<a href="#"><i class="fa fa-linkedin" style="margin-top:7px;"></i></a>
+<a href="#"><i class="fa fa-github" style="margin-top:7px;"></i></a>
+
+</div>
+
+</div>
+</footer>
+</div>
+</div>
+</body>
+</html>

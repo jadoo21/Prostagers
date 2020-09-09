@@ -1,0 +1,700 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Fullscreen Layout with Page Transitions</title>
+		<meta name="description" content="Fullscreen Layout with Page Transitions" />
+		<meta name="keywords" content="fullscreen layout, boxes, responsive, page transitions, css transitions, jquery, portfolio, template" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="https://tympanus.net/Development/favicon.ico">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family:Droid Serif, serif;
+padding:20 px 10px;
+}
+
+.header {
+ overflow: hidden;
+background: rgba(0, 0, 0, 0.5);
+ margin-left:0px;
+z-index:1;
+padding:10px;
+ 
+  position: fixed;
+}
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 25px; 
+  border:1px;
+}
+.header a.logo {
+position:relative;
+left:100px;
+ 
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header-right {
+  float: right;
+  right:60px;
+}
+
+.button
+{
+padding:17px;
+font-size:16px;
+text-align:center;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+position:relative;
+outline:none;
+color:white;
+background-color:transparent;
+border:none;
+
+border-radius:8px;
+display:incline;
+transition-duration:0.3s;
+font-size:16px;
+ text-decoration: none;
+}
+.button:hover {
+ background-color:#35C0ED;
+ color: white;
+}
+.back
+{
+background-image: url("https://www.cdl.gr/media/upload-files/2016/07/cdl_creative_studio-578f54f1b8c7569182.gif"); 
+width:100%;
+height:48%;
+background-repeat:no-repeat;
+background-position: center;
+background-size: cover;
+margin-top: 0px;
+left: 0px;
+overflow:hidden;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot');
+	src:url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon.woff') format('woff'),
+		url('../fonts/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body, html { font-size: 100%; padding: 0; margin: 0; height: 100%;}
+
+#codrops-ad-wrapper {
+	top: auto !important;
+	bottom: 10px;
+}
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    color: #6e685a;
+    background: #333;
+    font-size: 0.9em;
+    font-weight: 300;
+}
+
+.bl-main a {
+	color: #f0f0f0;
+	text-decoration: none;
+	font-weight: 700;
+	letter-spacing: 2px;
+	padding: 0 5px;
+	text-transform: uppercase;
+	font-size: 80%;
+}
+
+.bl-main a:hover {
+	color: #fff;
+}
+
+.container { height: 100%; }
+
+.bl-main {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.bl-main > section {
+	position: absolute;
+	width: 50%;
+	height: 50%;
+}
+
+.bl-main > section:first-child {
+	top: 0;
+	left: 0;
+	background:lightskyblue;
+}
+
+.bl-main > section:nth-child(2) {
+	top: 0;
+	left: 50%;
+	background: #FA987D;
+}
+
+.bl-main > section:nth-child(3) {
+	top: 50%;
+	left: 0;
+	background: #72CCA7;
+}
+
+.bl-main > section:nth-child(4) {
+	top: 50%;
+	left: 50%;
+	background:palevioletred;
+}
+
+.bl-box {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	opacity: 1;
+	/* Centering with flexbox */
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.bl-box h2 {
+	text-align: center;
+	margin: 0;
+	padding: 20px;
+	width: 100%;
+	font-size: 1.8em;
+	letter-spacing: 2px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.bl-icon {
+	font-family: 'icomoon';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	cursor: pointer;
+	-webkit-font-smoothing: antialiased;
+}
+
+.bl-icon:before {
+	display: block;
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+
+.bl-icon-about:before {
+	content: "\e000";
+}
+
+.bl-icon-works:before {
+	content: "\e001";
+}
+
+.bl-icon-blog:before {
+	content: "\e002";
+}
+
+.bl-icon-contact:before {
+	content: "\e003";
+}
+
+.bl-main > section .bl-icon-close {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+	z-index: 100;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.bl-icon-close:before {
+	content: "\e005";
+}
+
+.bl-content, 
+div.bl-panel-items > div > div {
+	opacity: 0;
+	pointer-events: none;
+	position: absolute;
+	top: 40px;
+	left: 25px;
+	right: 30px;
+	bottom:28px;
+	padding: 0 20px;
+	overflow: hidden;
+	overflow-y:hidden;
+}
+
+/* Custom content */
+
+.bl-content p {
+	margin: 0 auto;
+	padding-bottom: 15px;
+	font-size: 1.7em;
+	line-height: 1.8;
+}
+
+.bl-content h2 {
+	font-size: 3em;
+	font-weight: 300;
+	margin: 0 0 20px 0;
+}
+
+.bl-content article {
+	padding: 20px 40px 20px 0px;
+}
+
+.bl-content article h3 {
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	margin: 0 0 10px 0;
+	padding-top: 20px;
+	font-size: 1.4em;
+}
+
+.bl-content article a {
+	color: rgba(0,0,0,0.2);
+}
+
+.bl-content > ul {
+	list-style: none;
+	padding: 0;
+	margin:-10px;
+	
+} 
+
+.bl-content > ul li {
+	display: inline-block;
+	
+	width:50%;
+	height:68%;
+	margin-left:-2%;
+	overflow:hidden;
+
+}
+
+.bl-content > ul li a {
+	display: block;
+	padding: 0;
+	border: 8px solid rgba(0,0,0,0.1);
+	
+}
+
+.bl-content > ul li a img {
+	display: block;
+	width:50%;
+	
+	
+	
+}
+
+/* Panel Items */
+
+
+/* Transition classes and properties */
+/* Separated for a better overview and control */
+
+.bl-main > section {
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+.bl-main > section.bl-expand {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.bl-main > section.bl-expand-top {
+	z-index: 100;
+}
+
+.bl-main > section:first-child.bl-expand {
+	background: gray;
+}
+.bl-main > section:nth-child(2).bl-expand {
+	background:white;
+}
+.bl-main > section:nth-child(3).bl-expand {
+	background: white}
+.bl-main > section:nth-child(4).bl-expand {
+	background: white;
+}
+
+.bl-main.bl-expand-item > section:not(.bl-expand),
+.bl-main.bl-expand-item > section.bl-scale-down {
+	-webkit-transform: scale(0.5);
+	-moz-transform: scale(0.5);
+	-ms-transform: scale(0.5);
+	transform: scale(0.5);
+	opacity: 0;
+}
+
+.bl-box {
+	-webkit-transition: opacity 0.2s linear 0.5s;
+	-moz-transition: opacity 0.2s linear 0.5s;
+	transition: opacity 0.2s linear 0.5s;
+}
+
+section.bl-expand .bl-box {
+	opacity: 0;
+	-webkit-transition: opacity 0s linear;
+	-moz-transition: opacity 0s linear;
+	transition: opacity 0s linear;
+}
+
+.bl-box h2 {
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.no-touch section:not(.bl-expand) .bl-box:hover h2 {
+	-webkit-transform: translateY(-15px);
+	-moz-transform: translateY(-15px);
+	-ms-transform: translateY(-15px);
+	transform: translateY(-15px);
+}
+
+.bl-content,
+.bl-icon-close {
+	-webkit-transition: opacity 0.1s linear 0s;
+	-moz-transition: opacity 0.1s linear 0s;
+	transition: opacity 0.1s linear 0s;
+}
+
+section.bl-expand .bl-content,
+section.bl-expand .bl-icon-close {
+	pointer-events: auto;
+	opacity: 1;
+	-webkit-transition: opacity 0.3s linear 0.5s;
+	-moz-transition: opacity 0.3s linear 0.5s;
+	transition: opacity 0.3s linear 0.5s;
+}
+
+@media screen and (max-width: 46.5em) {
+	.bl-content,
+	.bl-box {
+		font-size: 75%;
+	}
+
+	.bl-expand .bl-box {
+		height: 130px;
+	}
+
+	.bl-content > ul li {
+		width: 40%;
+	}
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div class="back">
+	
+
+<div class="header">
+<img src="xx logo.png" style="position:relative;  margin-left:40px;" width="8%" height="15%"  />
+<div class="header-right">
+<button class="button" class="button" onclick="document.location='index.html'" style="padding:8px 20px; font-size:14px;" >Home</button>
+<button class="button"  onclick="document.location='about.html'" style="padding:10px 20px; font-size:14px;">About</button>
+<button class="button" onclick="document.location='project.html'"style="padding:10px 20px; font-size:14px;">Project</button>
+<button class="button" onclick="document.location='team.html'" style="padding:10px 20px; font-size:14px;">Team</button>
+<button class="button" onclick="document.location='contact.html'" style="padding:10px 20px; font-size:14px;margin-right:50px;">Contact</button>
+</div>
+</div>
+</div>
+<h1 style="margin-top:30px;color:white;font-size:44px ;text-align:center;">Planeteer</h1>
+<div class="container">	
+  <div id="bl-main" class="bl-main">
+    <section>
+      <div class="bl-box">
+        <h2 class="bl-icon bl-icon-about" style="color:white;">Concept</h2>
+      </div>
+      <div class="bl-content">
+        <h2 style=" color:wheat;font-weight:bold; text-align:center; ">Introduction</h2>
+        <p align=justify style="font-size:20px; color:cornsilk; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Traditional air quality monitoring methods, such as building air quality
+          monitoring stations, are typical expensive. Even air purification technique is quite expensive.
+          What we are here is to build a device called Planeteer. It will consist of two parts, one part will
+          contain all the monitoring sensors which will be embedded in a small cube box. Other will be a
+          purifier in which we can attach the sensor box. This combined device is an air purifier and
+          monitoring system with some advanced technology which uses IOT and android. In the sake of
+          IOT we are going to use ESP-32 module, MQ-135, MQ-7 sensors to detect the components
+          present in air. Now if we talk about the sensors in detail then MQ-135 sensor is an air quality
+          sensor which will detect the smoke, CO2 and alcohol whereas MQ-7 sensors are going to
+          measure concentration of CO in the air. Then data is sent to your mobile application where the
+          app represents all the data in a graphical and statistical manner with a great UI that is easily
+          understood by the user. This device can be used as two applications. One is we can take the first
+          part of planeteer outside homes so that it can check for air quality outside homes also and
+          suggest the user for a mask if air quality is worst. The other is we can use it in houses with the
+          purifier which will purify the room air when CO concentration or other harmful gases will
+          increase.</p>
+       
+      </div>
+      <span class="bl-icon bl-icon-close"></span>
+    </section>
+    <section id="bl-work-section">
+      <div class="bl-box">
+        <h2 class="bl-icon bl-icon-works" style="color:white;">Design</h2>
+      </div>
+      <div class="bl-content">
+        <h2 style="margin-left:38%;font-weight:bold; color:gray;font-size:40px">Design</h2>
+        
+        <ul id="bl-work-items">
+          <li data-panel="panel-1"  ><img src="box description.png"  /></li>
+          
+          <li data-panel="panel-2"><img src="planeteer filter.png"  /></li>
+        
+        </ul>
+        
+      </div>
+      <span class="bl-icon bl-icon-close"></span>
+    </section>
+    <section>
+      <div class="bl-box">
+        <h2 class="bl-icon bl-icon-blog" style="color:white;">flowChart</h2>
+      </div>
+      <div class="bl-content">
+        <h2 style="margin-left:38%;font-weight:bold; color:gray">FlowChart</h2>
+        <img src="Untitled Diagram.jpg" width="55%" height="80%" style="margin-left:28%" >
+      </div>
+      <span class="bl-icon bl-icon-close"></span>
+    </section>
+    <section>
+      <div class="bl-box">
+        <h2 class="bl-icon bl-icon-contact" style="color:white;">Circuit Diagram</h2>
+      </div>
+      <div class="bl-content">
+        <h2 style="margin-left:38%;font-weight:bold; color:gray;font-size:40px">Circuit Diagram</h2>
+        <img src="circuit diagram planeteer.jpg" width="60%" height="70%" style="margin-left:20%" >
+      </div>
+      <span class="bl-icon bl-icon-close"></span>
+    </section>
+    <!-- Panel items for the works -->
+    
+    </div>
+  </div>
+</div><!-- /container -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/boxlayout.js"></script>
+<script>
+  $(function() {
+    Boxlayout.init();
+  });
+</script>
+<script src="https://tympanus.net/codrops/adpacks/csscustom.js"></script> 
+<script src="https://tympanus.net/codrops/wp-content/plugins/oiopub-direct/js.php?type=banner&align=center&zone=1"></script>
+<script>
+  /* Modernizr 2.6.2 (Custom Build) | MIT & BSD
+ * Build: https://modernizr.com/download/#-cssanimations-csstransitions-touch-shiv-cssclasses-prefixed-teststyles-testprop-testallprops-prefixes-domprefixes-load
+ */
+;window.Modernizr=function(a,b,c){function z(a){j.cssText=a}function A(a,b){return z(m.join(a+";")+(b||""))}function B(a,b){return typeof a===b}function C(a,b){return!!~(""+a).indexOf(b)}function D(a,b){for(var d in a){var e=a[d];if(!C(e,"-")&&j[e]!==c)return b=="pfx"?e:!0}return!1}function E(a,b,d){for(var e in a){var f=b[a[e]];if(f!==c)return d===!1?a[e]:B(f,"function")?f.bind(d||b):f}return!1}function F(a,b,c){var d=a.charAt(0).toUpperCase()+a.slice(1),e=(a+" "+o.join(d+" ")+d).split(" ");return B(b,"string")||B(b,"undefined")?D(e,b):(e=(a+" "+p.join(d+" ")+d).split(" "),E(e,b,c))}var d="2.6.2",e={},f=!0,g=b.documentElement,h="modernizr",i=b.createElement(h),j=i.style,k,l={}.toString,m=" -webkit- -moz- -o- -ms- ".split(" "),n="Webkit Moz O ms",o=n.split(" "),p=n.toLowerCase().split(" "),q={},r={},s={},t=[],u=t.slice,v,w=function(a,c,d,e){var f,i,j,k,l=b.createElement("div"),m=b.body,n=m||b.createElement("body");if(parseInt(d,10))while(d--)j=b.createElement("div"),j.id=e?e[d]:h+(d+1),l.appendChild(j);return f=["&#173;",'<style id="s',h,'">',a,"</style>"].join(""),l.id=h,(m?l:n).innerHTML+=f,n.appendChild(l),m||(n.style.background="",n.style.overflow="hidden",k=g.style.overflow,g.style.overflow="hidden",g.appendChild(n)),i=c(l,a),m?l.parentNode.removeChild(l):(n.parentNode.removeChild(n),g.style.overflow=k),!!i},x={}.hasOwnProperty,y;!B(x,"undefined")&&!B(x.call,"undefined")?y=function(a,b){return x.call(a,b)}:y=function(a,b){return b in a&&B(a.constructor.prototype[b],"undefined")},Function.prototype.bind||(Function.prototype.bind=function(b){var c=this;if(typeof c!="function")throw new TypeError;var d=u.call(arguments,1),e=function(){if(this instanceof e){var a=function(){};a.prototype=c.prototype;var f=new a,g=c.apply(f,d.concat(u.call(arguments)));return Object(g)===g?g:f}return c.apply(b,d.concat(u.call(arguments)))};return e}),q.touch=function(){var c;return"ontouchstart"in a||a.DocumentTouch&&b instanceof DocumentTouch?c=!0:w(["@media (",m.join("touch-enabled),("),h,")","{#modernizr{top:9px;position:absolute}}"].join(""),function(a){c=a.offsetTop===9}),c},q.cssanimations=function(){return F("animationName")},q.csstransitions=function(){return F("transition")};for(var G in q)y(q,G)&&(v=G.toLowerCase(),e[v]=q[G](),t.push((e[v]?"":"no-")+v));return e.addTest=function(a,b){if(typeof a=="object")for(var d in a)y(a,d)&&e.addTest(d,a[d]);else{a=a.toLowerCase();if(e[a]!==c)return e;b=typeof b=="function"?b():b,typeof f!="undefined"&&f&&(g.className+=" "+(b?"":"no-")+a),e[a]=b}return e},z(""),i=k=null,function(a,b){function k(a,b){var c=a.createElement("p"),d=a.getElementsByTagName("head")[0]||a.documentElement;return c.innerHTML="x<style>"+b+"</style>",d.insertBefore(c.lastChild,d.firstChild)}function l(){var a=r.elements;return typeof a=="string"?a.split(" "):a}function m(a){var b=i[a[g]];return b||(b={},h++,a[g]=h,i[h]=b),b}function n(a,c,f){c||(c=b);if(j)return c.createElement(a);f||(f=m(c));var g;return f.cache[a]?g=f.cache[a].cloneNode():e.test(a)?g=(f.cache[a]=f.createElem(a)).cloneNode():g=f.createElem(a),g.canHaveChildren&&!d.test(a)?f.frag.appendChild(g):g}function o(a,c){a||(a=b);if(j)return a.createDocumentFragment();c=c||m(a);var d=c.frag.cloneNode(),e=0,f=l(),g=f.length;for(;e<g;e++)d.createElement(f[e]);return d}function p(a,b){b.cache||(b.cache={},b.createElem=a.createElement,b.createFrag=a.createDocumentFragment,b.frag=b.createFrag()),a.createElement=function(c){return r.shivMethods?n(c,a,b):b.createElem(c)},a.createDocumentFragment=Function("h,f","return function(){var n=f.cloneNode(),c=n.createElement;h.shivMethods&&("+l().join().replace(/\w+/g,function(a){return b.createElem(a),b.frag.createElement(a),'c("'+a+'")'})+");return n}")(r,b.frag)}function q(a){a||(a=b);var c=m(a);return r.shivCSS&&!f&&!c.hasCSS&&(c.hasCSS=!!k(a,"article,aside,figcaption,figure,footer,header,hgroup,nav,section{display:block}mark{background:#FF0;color:#000}")),j||p(a,c),a}var c=a.html5||{},d=/^<|^(?:button|map|select|textarea|object|iframe|option|optgroup)$/i,e=/^(?:a|b|code|div|fieldset|h1|h2|h3|h4|h5|h6|i|label|li|ol|p|q|span|strong|style|table|tbody|td|th|tr|ul)$/i,f,g="_html5shiv",h=0,i={},j;(function(){try{var a=b.createElement("a");a.innerHTML="<xyz></xyz>",f="hidden"in a,j=a.childNodes.length==1||function(){b.createElement("a");var a=b.createDocumentFragment();return typeof a.cloneNode=="undefined"||typeof a.createDocumentFragment=="undefined"||typeof a.createElement=="undefined"}()}catch(c){f=!0,j=!0}})();var r={elements:c.elements||"abbr article aside audio bdi canvas data datalist details figcaption figure footer header hgroup mark meter nav output progress section summary time video",shivCSS:c.shivCSS!==!1,supportsUnknownElements:j,shivMethods:c.shivMethods!==!1,type:"default",shivDocument:q,createElement:n,createDocumentFragment:o};a.html5=r,q(b)}(this,b),e._version=d,e._prefixes=m,e._domPrefixes=p,e._cssomPrefixes=o,e.testProp=function(a){return D([a])},e.testAllProps=F,e.testStyles=w,e.prefixed=function(a,b,c){return b?F(a,b,c):F(a,"pfx")},g.className=g.className.replace(/(^|\s)no-js(\s|$)/,"$1$2")+(f?" js "+t.join(" "):""),e}(this,this.document),function(a,b,c){function d(a){return"[object Function]"==o.call(a)}function e(a){return"string"==typeof a}function f(){}function g(a){return!a||"loaded"==a||"complete"==a||"uninitialized"==a}function h(){var a=p.shift();q=1,a?a.t?m(function(){("c"==a.t?B.injectCss:B.injectJs)(a.s,0,a.a,a.x,a.e,1)},0):(a(),h()):q=0}function i(a,c,d,e,f,i,j){function k(b){if(!o&&g(l.readyState)&&(u.r=o=1,!q&&h(),l.onload=l.onreadystatechange=null,b)){"img"!=a&&m(function(){t.removeChild(l)},50);for(var d in y[c])y[c].hasOwnProperty(d)&&y[c][d].onload()}}var j=j||B.errorTimeout,l=b.createElement(a),o=0,r=0,u={t:d,s:c,e:f,a:i,x:j};1===y[c]&&(r=1,y[c]=[]),"object"==a?l.data=c:(l.src=c,l.type=a),l.width=l.height="0",l.onerror=l.onload=l.onreadystatechange=function(){k.call(this,r)},p.splice(e,0,u),"img"!=a&&(r||2===y[c]?(t.insertBefore(l,s?null:n),m(k,j)):y[c].push(l))}function j(a,b,c,d,f){return q=0,b=b||"j",e(a)?i("c"==b?v:u,a,b,this.i++,c,d,f):(p.splice(this.i++,0,a),1==p.length&&h()),this}function k(){var a=B;return a.loader={load:j,i:0},a}var l=b.documentElement,m=a.setTimeout,n=b.getElementsByTagName("script")[0],o={}.toString,p=[],q=0,r="MozAppearance"in l.style,s=r&&!!b.createRange().compareNode,t=s?l:n.parentNode,l=a.opera&&"[object Opera]"==o.call(a.opera),l=!!b.attachEvent&&!l,u=r?"object":l?"script":"img",v=l?"script":u,w=Array.isArray||function(a){return"[object Array]"==o.call(a)},x=[],y={},z={timeout:function(a,b){return b.length&&(a.timeout=b[0]),a}},A,B;B=function(a){function b(a){var a=a.split("!"),b=x.length,c=a.pop(),d=a.length,c={url:c,origUrl:c,prefixes:a},e,f,g;for(f=0;f<d;f++)g=a[f].split("="),(e=z[g.shift()])&&(c=e(c,g));for(f=0;f<b;f++)c=x[f](c);return c}function g(a,e,f,g,h){var i=b(a),j=i.autoCallback;i.url.split(".").pop().split("?").shift(),i.bypass||(e&&(e=d(e)?e:e[a]||e[g]||e[a.split("/").pop().split("?")[0]]),i.instead?i.instead(a,e,f,g,h):(y[i.url]?i.noexec=!0:y[i.url]=1,f.load(i.url,i.forceCSS||!i.forceJS&&"css"==i.url.split(".").pop().split("?").shift()?"c":c,i.noexec,i.attrs,i.timeout),(d(e)||d(j))&&f.load(function(){k(),e&&e(i.origUrl,h,g),j&&j(i.origUrl,h,g),y[i.url]=2})))}function h(a,b){function c(a,c){if(a){if(e(a))c||(j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}),g(a,j,b,0,h);else if(Object(a)===a)for(n in m=function(){var b=0,c;for(c in a)a.hasOwnProperty(c)&&b++;return b}(),a)a.hasOwnProperty(n)&&(!c&&!--m&&(d(j)?j=function(){var a=[].slice.call(arguments);k.apply(this,a),l()}:j[n]=function(a){return function(){var b=[].slice.call(arguments);a&&a.apply(this,b),l()}}(k[n])),g(a[n],j,b,n,h))}else!c&&l()}var h=!!a.test,i=a.load||a.both,j=a.callback||f,k=j,l=a.complete||f,m,n;c(h?a.yep:a.nope,!!i),i&&c(i)}var i,j,l=this.yepnope.loader;if(e(a))g(a,0,l,0);else if(w(a))for(i=0;i<a.length;i++)j=a[i],e(j)?g(j,0,l,0):w(j)?B(j):Object(j)===j&&h(j,l);else Object(a)===a&&h(a,l)},B.addPrefix=function(a,b){z[a]=b},B.addFilter=function(a){x.push(a)},B.errorTimeout=1e4,null==b.readyState&&b.addEventListener&&(b.readyState="loading",b.addEventListener("DOMContentLoaded",A=function(){b.removeEventListener("DOMContentLoaded",A,0),b.readyState="complete"},0)),a.yepnope=k(),a.yepnope.executeStack=h,a.yepnope.injectJs=function(a,c,d,e,i,j){var k=b.createElement("script"),l,o,e=e||B.errorTimeout;k.src=a;for(o in d)k.setAttribute(o,d[o]);c=j?h:c||f,k.onreadystatechange=k.onload=function(){!l&&g(k.readyState)&&(l=1,c(),k.onload=k.onreadystatechange=null)},m(function(){l||(l=1,c(1))},e),i?k.onload():n.parentNode.insertBefore(k,n)},a.yepnope.injectCss=function(a,c,d,e,g,i){var e=b.createElement("link"),j,c=i?h:c||f;e.href=a,e.rel="stylesheet",e.type="text/css";for(j in d)e.setAttribute(j,d[j]);g||(n.parentNode.insertBefore(e,n),m(c,0))}}(this,document),Modernizr.load=function(){yepnope.apply(window,[].slice.call(arguments,0))};
+
+
+var Boxlayout = (function() {
+
+	var $el = $( '#bl-main' ),
+		$sections = $el.children( 'section' ),
+		// works section
+		$sectionWork = $( '#bl-work-section' ),
+		// work items
+		$workItems = $( '#bl-work-items > li' ),
+		// work panels
+		$workPanelsContainer = $( '#bl-panel-work-items' ),
+		$workPanels = $workPanelsContainer.children( 'div' ),
+		totalWorkPanels = $workPanels.length,
+		// navigating the work panels
+		$nextWorkItem = $workPanelsContainer.find( 'nav > span.bl-next-work' ),
+		// if currently navigating the work items
+		isAnimating = false,
+		// close work panel trigger
+		$closeWorkItem = $workPanelsContainer.find( 'nav > span.bl-icon-close' ),
+		transEndEventNames = {
+			'WebkitTransition' : 'webkitTransitionEnd',
+			'MozTransition' : 'transitionend',
+			'OTransition' : 'oTransitionEnd',
+			'msTransition' : 'MSTransitionEnd',
+			'transition' : 'transitionend'
+		},
+		// transition end event name
+		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+		// support css transitions
+		supportTransitions = Modernizr.csstransitions;
+
+	function init() {
+		initEvents();
+	}
+
+	function initEvents() {
+		
+		$sections.each( function() {
+			
+			var $section = $( this );
+
+			// expand the clicked section and scale down the others
+			$section.on( 'click', function() {
+
+				if( !$section.data( 'open' ) ) {
+					$section.data( 'open', true ).addClass( 'bl-expand bl-expand-top' );
+					$el.addClass( 'bl-expand-item' );	
+				}
+
+			} ).find( 'span.bl-icon-close' ).on( 'click', function() {
+				
+				// close the expanded section and scale up the others
+				$section.data( 'open', false ).removeClass( 'bl-expand' ).on( transEndEventName, function( event ) {
+					if( !$( event.target ).is( 'section' ) ) return false;
+					$( this ).off( transEndEventName ).removeClass( 'bl-expand-top' );
+				} );
+
+				if( !supportTransitions ) {
+					$section.removeClass( 'bl-expand-top' );
+				}
+
+				$el.removeClass( 'bl-expand-item' );
+				
+				return false;
+
+			} );
+
+		} );
+
+		// clicking on a work item: the current section scales down and the respective work panel slides up
+		$workItems.on( 'click', function( event ) {
+
+			// scale down main section
+			$sectionWork.addClass( 'bl-scale-down' );
+
+			// show panel for this work item
+			$workPanelsContainer.addClass( 'bl-panel-items-show' );
+
+			var $panel = $workPanelsContainer.find("[data-panel='" + $( this ).data( 'panel' ) + "']");
+			currentWorkPanel = $panel.index();
+			$panel.addClass( 'bl-show-work' );
+
+			return false;
+
+		} );
+
+		// navigating the work items: current work panel scales down and the next work panel slides up
+		$nextWorkItem.on( 'click', function( event ) {
+			
+			if( isAnimating ) {
+				return false;
+			}
+			isAnimating = true;
+
+			var $currentPanel = $workPanels.eq( currentWorkPanel );
+			currentWorkPanel = currentWorkPanel < totalWorkPanels - 1 ? currentWorkPanel + 1 : 0;
+			var $nextPanel = $workPanels.eq( currentWorkPanel );
+
+			$currentPanel.removeClass( 'bl-show-work' ).addClass( 'bl-hide-current-work' ).on( transEndEventName, function( event ) {
+				if( !$( event.target ).is( 'div' ) ) return false;
+				$( this ).off( transEndEventName ).removeClass( 'bl-hide-current-work' );
+				isAnimating = false;
+			} );
+
+			if( !supportTransitions ) {
+				$currentPanel.removeClass( 'bl-hide-current-work' );
+				isAnimating = false;
+			}
+			
+			$nextPanel.addClass( 'bl-show-work' );
+
+			return false;
+
+		} );
+
+		// clicking the work panels close button: the current work panel slides down and the section scales up again
+		$closeWorkItem.on( 'click', function( event ) {
+
+			// scale up main section
+			$sectionWork.removeClass( 'bl-scale-down' );
+			$workPanelsContainer.removeClass( 'bl-panel-items-show' );
+			$workPanels.eq( currentWorkPanel ).removeClass( 'bl-show-work' );
+			
+			return false;
+
+		} );
+
+	}
+
+	return { init : init };
+
+})();
+
+</script>
+  
+
+
+
+ 
+</div>
+
+</body>
+</html>

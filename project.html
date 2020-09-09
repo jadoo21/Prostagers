@@ -1,0 +1,575 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charser="utf-8">
+
+<style>
+* {box-sizing: border-box;}
+body { 
+  margin: 0;
+  font-family:'Droid Serif', serif;;
+padding:20 px 10px;
+overflow:scroll;
+
+
+
+}
+
+.container{
+margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    font-family: consolas;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .card{
+    position: relative;
+    cursor: pointer;
+}
+
+.container .card .face{
+    width: 300px;
+    height: 200px;
+    margin-left:70px;
+    transition: 0.5s;
+}
+
+.container .card .face.face1{
+    position: relative;
+    background: #0E0E0E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+}
+
+.container .card:hover .face.face1{
+    background: #e81361;
+    transform: translateY(0);
+}
+
+.container .card .face.face1 .content{
+    opacity: 0.8;
+    transition: 0.5s;
+}
+
+.container .card:hover .face.face1 .content{
+    opacity: 1;
+}
+
+.container .card .face.face1 .content img{
+    max-width: 150px;
+}
+
+.container .card .face.face1 .content h3{
+    margin: 10px 0 0;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.container .card .face.face2{
+    position: relative;
+    background: #fff;
+    display: flex;
+    margin-right:60px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px);
+}
+
+.container .card:hover .face.face2{
+    transform: translateY(0);
+}
+
+.container .card .face.face2 .content p{
+    margin: 0;
+    padding: 0;
+}
+
+.container .card .face.face2 .content a{
+    margin: 15px 0 0;
+    display:  inline-block;
+    text-decoration: none;
+    font-weight: 900;
+    color: #333;
+    padding: 5px;
+    border: 1px solid #333;
+}
+
+.container .card .face.face2 .content a:hover{
+    background: #333;
+    color: #fff;
+}
+
+
+.header {
+overflow: hidden;
+background-color: rgba(60, 60, 60, 0.5);
+margin-left:0px;
+z-index:1;
+padding:10px;
+}
+.header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 25px; 
+  border:1px;
+}
+.header a.logo {
+position:relative;
+left:100px;
+float:top;
+
+ 
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.header-right {
+  float: right;
+  right:60px;
+}
+.button
+{
+padding:17px;
+font-size:12px;
+text-align:center;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+position:relative;
+outline:none;
+color:white;
+background-color:transparent;
+border:none;
+border-radius:8px;
+display:incline;
+transition-duration:0.3s;
+}
+.button:hover {
+ background-color:#35C0ED;
+ color: white;
+}
+.b
+{
+background-image: url("0.gif");
+width:100%;
+height:48%;
+background-repeat:no-repeat;
+background-position: 50% 150%;
+background-attachment:fixed;
+background-size: cover;
+top: 0px;
+left: 0px;
+overflow:hidden;
+}
+.button_Read{
+padding:17px;
+font-size:12px;
+text-align:center;
+font-weight:bold;
+cursor:pointer;
+margin-top:20px;
+position:relative;
+outline:none;
+color:white;
+background:url("but.gif");
+border:none;
+border-radius:8px;
+display:incline;
+border:1px solid;
+transition-duration:0.3s;
+}
+.img
+{
+    position:relative;
+    margin-left: 40px;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+* {
+  font-family: Open Sans;
+}
+
+
+.footer-distributed{
+	background: #666;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 55px 50px;
+    margin-top:-300px;
+    overflow-x:hidden;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	width: 40%;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Open Sans', cursive;
+	margin: 0;
+}
+
+.footer-distributed h3 span{
+	color:  lightseagreen;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+  font-weight:400;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #222;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer Center */
+
+.footer-distributed .footer-center{
+	width: 35%;
+}
+
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+  font-weight:400;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-distributed .footer-center p a{
+	color:  lightseagreen;
+	text-decoration: none;;
+}
+
+.footer-distributed .footer-links a:before {
+  content: "|";
+  font-weight:300;
+  font-size: 20px;
+  left: 0;
+  color: #fff;
+  display: inline-block;
+  padding-right: 5px;
+}
+
+.footer-distributed .footer-links .link-1:before {
+  content: none;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	width: 20%;
+}
+
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 880px) {
+
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+
+}
+
+
+
+</style>
+</head>
+<body>
+<div class="b">
+
+<div class="header">
+
+<img src="logo with back.png"  width="9%" height="16%"  />
+<div class="header-right">
+<button class="button" class="button" onclick="document.location='index.html'"style="padding:8px 18px; font-size:14px;" >Home</button>
+<button class="button"  onclick="document.location='about.html'" style="padding:10px 20px; font-size:14px;">About</button>
+<button class="button" onclick="document.location='project.html'"style="padding:10px 20px; font-size:14px;">Project</button>
+<button class="button" onclick="document.location='team.html'" style="padding:10px 20px; font-size:14px;">Team</button>
+<button class="button" onclick="document.location='contact.html'" style="padding:10px 20px; font-size:14px;margin-right:50px;">Contact</button>
+</div>
+</div>
+</div>
+<div class="container">
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <img src="hospi+ logo.PNG"  width="450px" height="120px">
+                    <h3>Hospi +</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>Users can check for the hospitals nearby them.User can directly contact to the reception and ask for an appointment using Hospi+.</p>
+                       <button class="button_read" onclick="document.location='coming_soon.html'" style="padding:10px 20px; font-size:14px;margin-right:50px;">Read more</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <img src="P laneteer.png" width="450px" height="120px">
+                    <h3>Planeteer</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>It is a Air pollution monitoring and purification system using IoT and android.</p>
+                         <button class="button_read" onclick="document.location='project_planeteer.html'" style="padding:10px 20px; font-size:14px;margin-right:50px;">Read more</button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="face face1">
+                <div class="content">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRBIZo6DIvyuGMMtiifUQGoKjDyL06i7dta1w&usqp=CAU">
+                    <h3>Trash fisher</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>robotic boat that help to remove trash from urban drainage system and by using Artificial Intelligence we can separate the plastic that we can recycle. </p>
+                         <button class="button_read" onclick="document.location='coming_soon.html'" style="padding:10px 20px; font-size:14px;margin-right:50px;">Read more</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="container">
+        <div class="card" style="margin-top:-250px;">
+            <div class="face face1">
+                <div class="content">
+                    <img src="gas_logo.jpeg">
+                    <h3>Gas curator</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>The main aim of this project is to
+                        monitor for liquid petroleum gas (LPG) leakage to avoid major fire accidents.</p>
+                       <button class="button_read" onclick="document.location='coming_soon.html'" style="padding:10px 20px; font-size:14px;margin-right:50px;">Read more</button>
+                </div>
+            </div>
+        </div>
+       <div class="card" style="margin-top:-250px;">
+            <div class="face face1">
+                <div class="content">
+                    <img src="clibomate.jpg">
+                    <h3>Clibomate</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p></p>
+                       <button class="button_read" onclick="document.location='coming_soon.html'" style="padding:10px 20px; font-size:14px;margin-right:50px;">Read more</button>
+                </div>
+            </div>
+        </div>
+       <div class="card" style="margin-top:-250px;">
+            <div class="face face1">
+                <div class="content">
+                    <img src="clibomate.jpg">
+                    <h3>Astrologers</h3>
+                </div>
+            </div>
+            <div class="face face2">
+                <div class="content">
+                    <p>bcdhjbdhjdsvn bvjhbvdjbfbe bfebf kdbdf kjbf kjbdd.</p>
+                       <button class="button_read" onclick="document.location='coming_soon.html'" style="padding:10px 20px; font-size:14px;margin-right:50px;">Read more</button>
+                </div>
+            </div>
+        </div>
+
+        
+</div>
+
+<footer class="footer-distributed" style="overflow-x: hidden;">
+    <div class="footer-left">
+    
+    <img src="xx logo.png" width="20%" height="9%">
+    
+    <p class="footer-links">
+    <a href="index.html" class="link-1">Home</a>
+                        
+    <a href="project.html">project</a>
+    
+                    
+    <a href="about.html">About</a>
+                        
+    <a href="contact.html">Contact</a>
+    </p>
+    
+    <p class="footer-company-name">Prostagers © 2020</p>
+    </div>
+    
+    <div class="footer-center">
+    
+    <div>
+    <i class="fa fa-map-marker"></i>
+    <p><span>Chandigarh University,Gharaun</p>
+    </div>
+    
+    <div>
+    <i class="fa fa-phone"></i>
+    <p>+91.7903113421</p>
+    </div>
+    
+    <div>
+    <i class="fa fa-envelope"></i>
+    <p><a href="mailto: prostagers.help@gmail.com">prostagers.help@gmail.com</a></p>
+    </div>
+    
+    </div>
+    <div class="footer-right">
+    
+    <p class="footer-company-about" >
+    <span style="font-size:18px;">About the company</span>
+    <h style="font-size:15px;">We are here to develop our projects under the name Prostagers. Our goal is to develop prototypes of the solution that will really help people with the problems they 
+    face in their daily life.</h>
+    </p>
+    <div class="footer-icons">
+    
+    <a href="https://www.instagram.com/official_shams03/" target="blank"><i class="fa fa-instagram" style="margin-top:7px;"></i></a>
+    <a href="#"><i class="fa fa-twitter" style="margin-top:7px;"></i></a>
+    <a href="#"><i class="fa fa-linkedin" style="margin-top:7px;"></i></a>
+    <a href="#"><i class="fa fa-github" style="margin-top:7px;"></i></a>
+    
+    </div>
+    
+    </div>
+    </footer>
+
+
+
+    
+</body>
+</html>
+
